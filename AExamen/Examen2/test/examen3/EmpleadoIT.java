@@ -305,7 +305,7 @@ public class EmpleadoIT {
         System.out.println("calculoRetencion1");
         double sueldoBruto = 1000.0;
         double expResult = 50.0;
-        double result = Empleado.claculoRetencion(sueldoBruto);
+        double result = Empleado.calculoRetencion(sueldoBruto);
         assertEquals(expResult, result, 0);
         // TODO review the generated test code and remove the default call to fail.
         
@@ -316,21 +316,21 @@ public class EmpleadoIT {
         System.out.println("calculoRetencion2");
         double sueldoBruto = 0.0;
         double expResult = 0.0;
-        double result = Empleado.claculoRetencion(sueldoBruto);
+        double result = Empleado.calculoRetencion(sueldoBruto);
         assertEquals(expResult, result, 0);
         // TODO review the generated test code and remove the default call to fail.
         
     }
 
     /**
-     * Test of imprimirDatos method, of class Empleado.
+     * Test of toString method, of class Empleado.
      */
     @Test
-    public void testImprimirDatos() {
+    public void testToString() {
         System.out.println("imprimirDatos");
         Empleado instance = new Empleado();
         String expResult = "";
-        String result = instance.imprimirDatos();
+        String result = instance.toString();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
