@@ -3,10 +3,6 @@ package examen3;
 
 import java.util.Scanner;
 
-/**
- *
- * @author mtisc
- */
 public class Empleado {
     
     

@@ -1,6 +1,6 @@
 package examen3;
 
-import java.util.Scanner;
+
 
 public class TrabajadorPorHoras extends Empleado {
 

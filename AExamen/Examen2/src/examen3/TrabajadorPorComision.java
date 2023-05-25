@@ -1,5 +1,7 @@
 package examen3;
-
+/*
+autor Maria
+*/
 
 
 public class TrabajadorPorComision extends Empleado {

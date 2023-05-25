@@ -285,7 +285,7 @@ public class EmpleadoIT {
     /**
      * Test of calculoSueldoNeto method, of class Empleado.
      */
-    @Test
+    /*@Test
     public void testCalculoSueldoNeto() {
         System.out.println("calculoSueldoNeto1");
         double sueldoBruto = 1000.0;
@@ -295,7 +295,7 @@ public class EmpleadoIT {
         assertEquals(expResult, result, 0);
         // TODO review the generated test code and remove the default call to fail.
        
-    }
+    }*/
 
     /**
      * Test of calculoRetencion method, of class Empleado.

@@ -23,7 +23,7 @@ public class Empresa {
 
         System.out.println(trabajador1.imprimirDatos());
 
-        System.out.println("El sueldo bruto es " + trabajador1.calculoSueldoBrutoMasComision(trabajador1)
+        System.out.println("El sueldo bruto es  " + trabajador1.calculoSueldoBrutoMasComision(trabajador1)
                 + " la retención es " + retencion
                 + " el sueldo neto es " + sueldoNeto);
 
