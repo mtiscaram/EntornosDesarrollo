@@ -1,6 +1,6 @@
 package examen3;
 
-import java.util.Scanner;
+
 
 public class Empresa {
    
@@ -11,22 +11,23 @@ public class Empresa {
         double retencion;
         double sueldoNeto;
         
-        Trabajador trabajador1 = new Trabajador();
+        TrabajadorPorComision trabajador1 = new TrabajadorPorComision();
 
         trabajador1.datosTrabajador();
         
         
 
-        sueldoBruto = trabajador1.getHorasTrabajadas() * trabajador1.getPrecioHora();
-        retencion = sueldoBruto * (5.0 / 100.0);
-        sueldoNeto = sueldoBruto - retencion;
+       trabajador1.calculoSueldoBrutoMasComision(trabajador1);
+        retencion = TrabajadorPorHoras.claculoRetencion(trabajador1.calculoSueldoBrutoMasComision(trabajador1));
+        sueldoNeto = TrabajadorPorHoras.calculoSueldoNeto(trabajador1.calculoSueldoBrutoMasComision(trabajador1), retencion);
 
         System.out.println(trabajador1.imprimirDatos());
 
-        System.out.println("El sueldo bruto es " + sueldoBruto
+        System.out.println("El sueldo bruto es " + trabajador1.calculoSueldoBrutoMasComision(trabajador1)
                 + " la retención es " + retencion
                 + " el sueldo neto es " + sueldoNeto);
 
     }
+
 
 }

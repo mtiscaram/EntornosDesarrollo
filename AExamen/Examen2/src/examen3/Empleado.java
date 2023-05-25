@@ -1,27 +1,25 @@
+
 package examen3;
 
 import java.util.Scanner;
 
-public class Trabajador {
-
+/**
+ *
+ * @author mtisc
+ */
+public class Empleado {
+    
+    
     Scanner sc = new Scanner(System.in);
-    private String nombre;
-    private String apellido1;
-    private String apellido2;
-    private String dni;   
-    private double horasTrabajadas;
-    private double precioHora;
+    protected String nombre;
+    protected String apellido1;
+    protected String apellido2;
+    protected String dni;
+    protected String numeroSeguroSocial;
+    protected double horasTrabajadas;
+    protected double precioHora;
 
-    public Trabajador() {
-    }
-
-    public Trabajador(String nombre, String apellido1, String apellido2, String dni, String nss, double horasTrabajadas, double precioHora) {
-        this.nombre = nombre;
-        this.apellido1 = apellido1;
-        this.apellido2 = apellido2;
-        this.dni = dni;        
-        this.horasTrabajadas = horasTrabajadas;
-        this.precioHora = precioHora;
+    public Empleado() {
     }
 
     /**
@@ -81,6 +79,20 @@ public class Trabajador {
     }
 
     /**
+     * @return the numeroSeguroSocial
+     */
+    public String getNumeroSeguroSocial() {
+        return numeroSeguroSocial;
+    }
+
+    /**
+     * @param numeroSeguroSocial the dni to set
+     */
+    public void setNumeroSeguroSocial(String numeroSeguroSocial) {
+        this.numeroSeguroSocial = numeroSeguroSocial;
+    }
+
+    /**
      * @return the horasTrabajadas
      */
     public double getHorasTrabajadas() {
@@ -117,16 +129,34 @@ public class Trabajador {
         apellido2 = sc.nextLine();
         System.out.println("Introduce dni del trabajador:");
         dni = sc.nextLine();
+        System.out.println("Introduce nss del trabajador:");
+        numeroSeguroSocial = sc.nextLine();
         System.out.println("Introduce horas trabajadas:");
         horasTrabajadas = sc.nextDouble();
-
         System.out.println("Introduce precio por hora:");
         precioHora = sc.nextDouble();
-
+    }
+        
+    
+    public static double calculoSueldoBruto(TrabajadorPorHoras trabajador1) {
+        double sueldoBruto;
+        sueldoBruto = Math.abs(trabajador1.getHorasTrabajadas()) * Math.abs( trabajador1.getPrecioHora()) ;
+        return sueldoBruto;
+    }
+     
+    public static double calculoSueldoNeto(double sueldoBruto, double retencion) {
+        double sueldoNeto;
+        sueldoNeto = sueldoBruto - retencion;
+        return sueldoNeto;
     }
 
+    public static double claculoRetencion(double sueldoBruto) {
+        double retencion;
+        retencion = sueldoBruto * (5.0 / 100.0);
+        return retencion;
+    }
     public String imprimirDatos() {
-        return "El trabajador " + nombre + " " + apellido1 + " " + apellido2 + " con DNI " + dni ;
+        return "El trabajador " + nombre + " " + apellido1 + " " + apellido2 + " con DNI " + dni + " con nss " + numeroSeguroSocial;
     }
-
+    
 }
