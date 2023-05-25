@@ -3,15 +3,7 @@ package examen3;
 import java.util.Scanner;
 
 public class Empresa {
-
-    /*String nombre;
-        String apellido1;
-        String apellido2;
-        String dni;
-        String nss;
-        double horasTrabajadas; 
-        double precioHora;
-        Scanner sc =new Scanner(System.in);*/
+   
 
     public static void main(String[] args) {
           
