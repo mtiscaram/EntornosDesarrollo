@@ -1,14 +1,14 @@
-
 package examen3;
 
 import java.util.Scanner;
+
 /**
  * Super clase Empleado
+ *
  * @author mtisc
  */
-public class Empleado {
-    
-    
+public abstract class Empleado {
+
     Scanner sc = new Scanner(System.in);
     /**
      * Variables con modificador de acceso protected
@@ -29,6 +29,7 @@ public class Empleado {
     protected String numeroSeguroSocial;
     protected double horasTrabajadas;
     protected double precioHora;
+
     /**
      * Constructor vacio Empleado
      */
@@ -132,54 +133,39 @@ public class Empleado {
     public void setPrecioHora(double precioHora) {
         this.precioHora = precioHora;
     }
+
     /**
-     * Método datosTrabajador 
-     * Metodo que pide por teclado introducir los datos de trabajador
+     * Método datosTrabajador Metodo que pide por teclado introducir los datos
+     * de trabajador
      */
-    public void datosTrabajador() {
-        System.out.println("Introduce nombre del trabajador:");
-        nombre = sc.nextLine();
-        System.out.println("Introduce primer apellido del trabajador:");
-        apellido1 = sc.nextLine();
-        System.out.println("Introduce segundo apellido del trabajador:");
-        apellido2 = sc.nextLine();
-        System.out.println("Introduce dni del trabajador:");
-        dni = sc.nextLine();
-        System.out.println("Introduce nss del trabajador:");
-        numeroSeguroSocial = sc.nextLine();
-        System.out.println("Introduce horas trabajadas:");
-        horasTrabajadas = sc.nextDouble();
-        System.out.println("Introduce precio por hora:");
-        precioHora = sc.nextDouble();
-    }
-     /**
-      * Método calculoSueldoBruto
-      * Método que por parámetro de trabajador1 calcula el sueldoBruto multiplicando horasTrabajadas por precioHora
-      * utiliza la clase Math.abs para pasar a valor absoluto valores ya que no puede ser negativo en sueldo 
-      * @param trabajador1
-      * @return sueldoBruto
-      */   
-    
-    public static double calculoSueldoBruto(TrabajadorPorHoras trabajador1) {
-        double sueldoBruto;
-        sueldoBruto = Math.abs(trabajador1.getHorasTrabajadas()) * Math.abs( trabajador1.getPrecioHora()) ;
-        return sueldoBruto;
-    }
+    public abstract void datosTrabajador();
+
     /**
-     * Método calculaSueldoNeto 
-     * Método que calcula el sueldoNeto con la resta de sueldoBruto menos retencion
+     * Método abstracto tipo double calculoSueldoBruto que cada clase 
+     * hija lo implementa de una manera diferente
+     * @return 
+     */
+
+    public abstract double calculoSueldoBruto();
+
+    /**
+     * Método calculaSueldoNeto Método que calcula el sueldoNeto con la resta de
+     * sueldoBruto menos retencion
+     *
      * @param sueldoBruto
      * @param retencion
      * @return sueldoNeto
-     */ 
+     */
     public static double calculoSueldoNeto(double sueldoBruto, double retencion) {
         double sueldoNeto;
         sueldoNeto = sueldoBruto - retencion;
         return sueldoNeto;
     }
+
     /**
-     * Método calculoRetencion
-     * Método que calcula valor de retencion multiplicando sueldoBruto por 0.05
+     * Método calculoRetencion Método que calcula valor de retencion
+     * multiplicando sueldoBruto por 0.05
+     *
      * @param sueldoBruto
      * @return retencion
      */
@@ -188,14 +174,15 @@ public class Empleado {
         retencion = sueldoBruto * (5.0 / 100.0);
         return retencion;
     }
+
     /**
-     * Método toString
-     * Método que devuelve los datos de trabajador
+     * Método toString Método que devuelve los datos de trabajador
+     *
      * @return nombre, apellido1, apellido2, dni, numeroSeguroSocial
      */
     @Override
     public String toString() {
         return "El trabajador " + nombre + " " + apellido1 + " " + apellido2 + " con DNI " + dni + " con nss " + numeroSeguroSocial;
     }
-    
+
 }

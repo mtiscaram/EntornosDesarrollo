@@ -6,33 +6,50 @@ package examen3;
  */
 
 public class TrabajadorPorHoras extends Empleado {
+    
 /**
- * Contructor vacio de TrabajadorPorHoras
+ * Contructor TrabajadorPorHoras que hereda variables de Empleado
  */
-   
-
-
+    
     public TrabajadorPorHoras() {
+        super();
     }
+    
+    
+    
     /**
-     * 
-     * @param nombre
-     * @param apellido1
-     * @param apellido2
-     * @param dni
-     * @param nss
-     * @param horasTrabajadas
-     * @param precioHora 
+     * Método calculoSueldoBruto 
+     * Calcula el sueldoBruto multiplicando horasTrabajadas con precioHora 
+     * @return sueldoBruto
      */
 
-    private TrabajadorPorHoras(String nombre, String apellido1, String apellido2, String dni, String nss, double horasTrabajadas, double precioHora) {
-        this.nombre = nombre;
-        this.apellido1 = apellido1;
-        this.apellido2 = apellido2;
-        this.dni = dni; 
-        this.numeroSeguroSocial = nss;
-        this.horasTrabajadas = horasTrabajadas;
-        this.precioHora = precioHora;
+    @Override
+    public double calculoSueldoBruto() {
+        double sueldoBruto;
+        sueldoBruto = Math.abs(horasTrabajadas) * Math.abs( precioHora) ;
+        return sueldoBruto;
+    }
+    /**
+     * Método datosTrabajador 
+     * Metodo que pide por teclado introducir los datos
+     * de trabajador
+     */
+    @Override
+    public void datosTrabajador() {
+        System.out.println("Introduce nombre del trabajador:");
+        nombre = sc.nextLine();
+        System.out.println("Introduce primer apellido del trabajador:");
+        apellido1 = sc.nextLine();
+        System.out.println("Introduce segundo apellido del trabajador:");
+        apellido2 = sc.nextLine();
+        System.out.println("Introduce dni del trabajador:");
+        dni = sc.nextLine();
+        System.out.println("Introduce nss del trabajador:");
+        numeroSeguroSocial = sc.nextLine();
+        System.out.println("Introduce horas trabajadas:");
+        horasTrabajadas = sc.nextDouble();
+        System.out.println("Introduce precio por hora:");
+        precioHora = sc.nextDouble();
     }
 
 

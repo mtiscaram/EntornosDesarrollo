@@ -1,62 +1,128 @@
 package examen3;
+
+import java.util.Scanner;
+
 /**
  * Clase principal Empresa
- * 
- * @author mtisc
- * version 25.05.2023
+ *
+ * @author mtisc version 25.05.2023
  */
-
-
 public class Empresa {
+
     /**
      * Variables de tipo double
      * <ul>
      * <li>retencion</li>
      * <li>sueldoNeto</li>
-     *</ul>
-     * que se obtienen de llamar de la clase Tabajador llamando a sus diferentes 
-     * métodos para que sean calculados
+     * </ul>
+     * Se calculan llamando a sus respectivos métodos de las clases Trabajador
      */
     /**
-     * Objeto trabajador1 de la clase Trabajador PorComision
-     * Objeto Trabajador1 que llama al método datosTrabajador
-     */
-    /**
-     * Diferentes métodos que llama de la clase TrabajadorPorHoras
+     * Variable de tipo int 
+     * valor para elegir opcion del menú
      * 
-     * @see calculoSueldoBrutoMasComision
-     * @see calculoRetencion
-     * @see calculoSueldoNeto
+     */
+    /**
+     * Se crea Objeto trabajador1 de la clase TrabajadorPorComision
+     * 
+     */
+    /**
+     * Se crea Objeto trabajador2 de la clase TrabajadorPorHoras
+     * 
      */
     
-   /**
-    * 
-    * @param args 
-    */
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
-          
-        
+        Scanner sc = new Scanner(System.in);
+
         double retencion;
         double sueldoNeto;
-        
+        int opcion;
         TrabajadorPorComision trabajador1 = new TrabajadorPorComision();
+        TrabajadorPorHoras trabajador2 = new TrabajadorPorHoras();
 
-        trabajador1.datosTrabajador();
-        
-        
+     /**
+      * Bucle do-while para elegir opción del menú:
+      * <ul>
+      * <li>trabajador por horas</li>
+      * <li>trabajador por comision</li>
+      * <li>salir del programa</li>
+      * </ul>
+      * 
+      */  
+     /**
+      * trabajador 1 de tipo TrabajadorPorComision llama a métodos:
+      * <ul>
+      * <li>datosTrabajador</li>
+      * <li>calculoSueldoBruto</li>
+      * <li>calculoRetencion</li>
+      * <li>calculoSueldoNeto</li>
+      * <li>toString</li>
+      * </ul>
+      * 
+      */
+     /**
+      * trabajador 2 de tipo TrabajadorPorHoras llama a métodos:
+      * <ul>
+      * <li>datosTrabajador</li>
+      * <li>calculoSueldoBruto</li>
+      * <li>calculoRetencion</li>
+      * <li>calculoSueldoNeto</li>
+      * <li>toString</li>
+      * </ul>
+      * 
+      */
 
-       trabajador1.calculoSueldoBrutoMasComision(trabajador1);
-        retencion = TrabajadorPorHoras.calculoRetencion(trabajador1.calculoSueldoBrutoMasComision(trabajador1));
-        sueldoNeto = TrabajadorPorHoras.calculoSueldoNeto(trabajador1.calculoSueldoBrutoMasComision(trabajador1), retencion);
+        do {
+            System.out.println("\n Elige a un tipo de trabajador:");
+            System.out.println("1.-Trabajador por comision");
+            System.out.println("2.-trabajador por horas");
+            System.out.println("3.-Salir del programa.");
+            opcion = sc.nextInt();
 
-        System.out.println(trabajador1.toString());
+            switch (opcion) {
 
-        System.out.println("El sueldo bruto es  " + trabajador1.calculoSueldoBrutoMasComision(trabajador1)
-                + " la retención es " + retencion
-                + " el sueldo neto es " + sueldoNeto);
+                case 1:
+                    trabajador1.datosTrabajador();                    
+                    trabajador1.calculoSueldoBruto();
+                    retencion = TrabajadorPorComision.calculoRetencion(trabajador1.calculoSueldoBruto());
+                    sueldoNeto = TrabajadorPorComision.calculoSueldoNeto(trabajador1.calculoSueldoBruto(), retencion);
+
+                    System.out.println(trabajador1.toString());
+
+                    System.out.println("El sueldo bruto de trabajador por comisión es  " + trabajador1.calculoSueldoBruto()
+                            + " la retención es " + retencion
+                            + " el sueldo neto es " + sueldoNeto);
+                    break;
+                case 2:
+                    trabajador2.datosTrabajador();
+                    trabajador2.calculoSueldoBruto();
+                    retencion = TrabajadorPorHoras.calculoRetencion(trabajador2.calculoSueldoBruto());
+                    sueldoNeto = TrabajadorPorHoras.calculoSueldoNeto(trabajador2.calculoSueldoBruto(), retencion);
+
+                    System.out.println(trabajador1.toString());
+
+                    System.out.println("El sueldo bruto de trabajador por horas es  " + trabajador2.calculoSueldoBruto()
+                            + " la retención es " + retencion
+                            + " el sueldo neto es " + sueldoNeto);
+                    break;
+
+                case 3:
+
+                    System.out.println("Saliendo del programa....");
+                    sc.close();
+                    break;
+
+                default:
+                    System.out.println("Opción no válida, introduzca una opción del menú:");
+
+            }
+
+        } while (opcion != 3);
 
     }
-
-
 }

@@ -1,56 +1,75 @@
 package examen3;
-
+import java.util.Scanner;
 /**
  * Clase TrabajadorPorComision que extiende de Empleado
  *
  * @author mtisc
  */
-
-    public class TrabajadorPorComision extends Empleado {
+public class TrabajadorPorComision extends Empleado {
+    Scanner sc = new Scanner(System.in);
 
     /**
-     * Variable fija de comision
+     * Variable comision
      */
-    final double COMISION = 10.25;
+    private double comision;
+
     /**
-     * Constructor vacio de TrabajadorPor Comision
+     * Constructor TrabajadorPorComision que hereda variables de Empleado
      */
     public TrabajadorPorComision() {
+        super();
     }
+    
     /**
-     * Método calculoSueldoBrutoMasComision
-     * Método que calcula sueldoBruto multiplicando los parámetros horasTrabajadas y precioHora de un objeto trabajador1
-     * y sumandole la comision
-     * @param trabajador1
+     * @return comision
+     */
+    public double getComision() {
+        return comision;
+    }
+    
+    /**
+     * @param comision the comision to set
+     */
+    public void setComision(double comision) {
+        this.comision = comision;
+    }
+    
+    /**
+     * Método datosTrabajador Metodo que pide por teclado introducir los datos
+     * de trabajador
+     */
+    @Override
+    public void datosTrabajador() {
+        System.out.println("Introduce nombre del trabajador:");
+        nombre = sc.nextLine();
+        System.out.println("Introduce primer apellido del trabajador:");
+        apellido1 = sc.nextLine();
+        System.out.println("Introduce segundo apellido del trabajador:");
+        apellido2 = sc.nextLine();
+        System.out.println("Introduce dni del trabajador:");
+        dni = sc.nextLine();
+        System.out.println("Introduce nss del trabajador:");
+        numeroSeguroSocial = sc.nextLine();
+        System.out.println("Introduce horas trabajadas:");
+        horasTrabajadas = sc.nextDouble();
+        System.out.println("Introduce precio por hora:");
+        precioHora = sc.nextDouble();
+        System.out.println("Introduce la comision del trabajador:");
+        comision = sc.nextDouble();
+    }
+
+    /**
+     * Método calculoSueldoBruto Calcula el sueldoBruto multiplicando
+     * horasTrabajadas con precioHora y luego suma COMISION
+     *
      * @return sueldoBruto
      */
-    public double calculoSueldoBrutoMasComision(TrabajadorPorComision trabajador1) {
+    @Override
+    public double calculoSueldoBruto() {
+
         double sueldoBruto;
-        sueldoBruto = (trabajador1.getHorasTrabajadas() * trabajador1.getPrecioHora()) + COMISION;
+        sueldoBruto = Math.abs(horasTrabajadas) * Math.abs(precioHora) + comision;
         return sueldoBruto;
-    }
-
-    /**
-     * Método TrabajadorPor Comision para acceder a los atributos de TrabajadorPorComision
-     * @param nombre
-     * @param apellido1
-     * @param apellido2
-     * @param dni
-     * @param nss
-     * @param horasTrabajadas
-     * @param precioHora 
-     */
-
-    private TrabajadorPorComision(String nombre, String apellido1, String apellido2, String dni, String nss,
-            double horasTrabajadas, double precioHora) {
-        this.nombre = nombre;
-        this.apellido1 = apellido1;
-        this.apellido2 = apellido2;
-        this.dni = dni;
-        this.numeroSeguroSocial = nss;
-        this.horasTrabajadas = horasTrabajadas;
-        this.precioHora = precioHora;
-
     }
 
 }
