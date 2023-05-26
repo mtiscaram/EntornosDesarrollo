@@ -28,7 +28,7 @@ public class TrabajadorPorComision extends Empleado {
     }
     
     /**
-     * @param comision the comision to set
+     * @param comision  comision to set
      */
     public void setComision(double comision) {
         this.comision = comision;
@@ -60,13 +60,12 @@ public class TrabajadorPorComision extends Empleado {
 
     /**
      * Método calculoSueldoBruto Calcula el sueldoBruto multiplicando
-     * horasTrabajadas con precioHora y luego suma COMISION
+     * horasTrabajadas con precioHora y luego se le suma comision
      *
      * @return sueldoBruto
      */
     @Override
     public double calculoSueldoBruto() {
-
         double sueldoBruto;
         sueldoBruto = Math.abs(horasTrabajadas) * Math.abs(precioHora) + comision;
         return sueldoBruto;

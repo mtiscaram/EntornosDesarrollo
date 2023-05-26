@@ -37,77 +37,77 @@ public abstract class Empleado {
     }
 
     /**
-     * @return the nombre
+     * @return nombre
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * @param nombre the nombre to set
+     * @param nombre nombre to set
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * @return the apellido1
+     * @return apellido1
      */
     public String getApellido1() {
         return apellido1;
     }
 
     /**
-     * @param apellido1 the apellido1 to set
+     * @param apellido1 apellido1 to set
      */
     public void setApellido1(String apellido1) {
         this.apellido1 = apellido1;
     }
 
     /**
-     * @return the apellido2
+     * @return apellido2
      */
     public String getApellido2() {
         return apellido2;
     }
 
     /**
-     * @param apellido2 the apellido2 to set
+     * @param apellido2 apellido2 to set
      */
     public void setApellido2(String apellido2) {
         this.apellido2 = apellido2;
     }
 
     /**
-     * @return the dni
+     * @return dni
      */
     public String getDni() {
         return dni;
     }
 
     /**
-     * @param dni the dni to set
+     * @param dni dni to set
      */
     public void setDni(String dni) {
         this.dni = dni;
     }
 
     /**
-     * @return the numeroSeguroSocial
+     * @return numeroSeguroSocial
      */
     public String getNumeroSeguroSocial() {
         return numeroSeguroSocial;
     }
 
     /**
-     * @param numeroSeguroSocial the dni to set
+     * @param numeroSeguroSocial numeroSeguridadSocial
      */
     public void setNumeroSeguroSocial(String numeroSeguroSocial) {
         this.numeroSeguroSocial = numeroSeguroSocial;
     }
 
     /**
-     * @return the horasTrabajadas
+     * @return horasTrabajadas
      */
     public double getHorasTrabajadas() {
         return horasTrabajadas;
@@ -121,14 +121,14 @@ public abstract class Empleado {
     }
 
     /**
-     * @return the precioHora
+     * @return precioHora
      */
     public double getPrecioHora() {
         return precioHora;
     }
 
     /**
-     * @param precioHora the precioHora to set
+     * @param precioHora precioHora to set
      */
     public void setPrecioHora(double precioHora) {
         this.precioHora = precioHora;
@@ -143,7 +143,7 @@ public abstract class Empleado {
     /**
      * Método abstracto tipo double calculoSueldoBruto que cada clase 
      * hija lo implementa de una manera diferente
-     * @return 
+     * @return sueldoBruto
      */
 
     public abstract double calculoSueldoBruto();

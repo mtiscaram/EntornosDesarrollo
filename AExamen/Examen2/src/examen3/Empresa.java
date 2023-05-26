@@ -55,7 +55,7 @@ public class Empresa {
       * 
       */  
      /**
-      * trabajador 1 de tipo TrabajadorPorComision llama a métodos:
+      * Objeto trabajador1 de tipo TrabajadorPorComision llama a métodos:
       * <ul>
       * <li>datosTrabajador</li>
       * <li>calculoSueldoBruto</li>
@@ -66,7 +66,7 @@ public class Empresa {
       * 
       */
      /**
-      * trabajador 2 de tipo TrabajadorPorHoras llama a métodos:
+      * Objeto trabajador2 de tipo TrabajadorPorHoras llama a métodos:
       * <ul>
       * <li>datosTrabajador</li>
       * <li>calculoSueldoBruto</li>
@@ -119,7 +119,6 @@ public class Empresa {
 
                 default:
                     System.out.println("Opción no válida, introduzca una opción del menú:");
-
             }
 
         } while (opcion != 3);
