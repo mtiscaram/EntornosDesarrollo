@@ -4,23 +4,27 @@ package examenedtarea;
 import java.util.Scanner;
 
 
-public class Trabajador {
+public abstract class Empleado {
     Scanner sc = new Scanner(System.in);
-    private String nombre;
-    private String apellido1;
-    private String apellido2;
-    private String dni;   
-    private double horasTrabajadas;
-    private double precioHora;
+    protected String nombre;
+    protected String apellido1;
+    protected String apellido2;
+    protected String dni;
+    protected String numeroSeguroSocial;
 
-    public Trabajador() {
+    
+    protected double horasTrabajadas;
+    protected double precioHora;
+
+    public Empleado() {
     }
 
-    public Trabajador(String nombre, String apellido1, String apellido2, String dni, String nss, double horasTrabajadas, double precioHora) {
+    public Empleado(String nombre, String apellido1, String apellido2, String dni, String nss, double horasTrabajadas, double precioHora, String numeroSeguroSocial) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
-        this.dni = dni;        
+        this.dni = dni; 
+        this.numeroSeguroSocial = numeroSeguroSocial;
         this.horasTrabajadas = horasTrabajadas;
         this.precioHora = precioHora;
     }
@@ -80,6 +84,14 @@ public class Trabajador {
     public void setDni(String dni) {
         this.dni = dni;
     }
+    
+    public String getNumeroSeguroSocial() {
+        return numeroSeguroSocial;
+    }
+
+    public void setNumeroSeguroSocial(String numeroSeguroSocial) {
+        this.numeroSeguroSocial = numeroSeguroSocial;
+    }
 
     /**
      * @return the horasTrabajadas
@@ -124,6 +136,21 @@ public class Trabajador {
         System.out.println("Introduce precio por hora:");
         precioHora = sc.nextDouble();
 
+    }
+    public abstract double calculoSueldoBruto();
+
+    
+    public static double calculoSueldoNeto(double sueldoBruto, double retencion) {
+        double sueldoNeto;
+        sueldoNeto = sueldoBruto - retencion;
+        return sueldoNeto;
+    }
+
+    
+    public static double calculoRetencion(double sueldoBruto) {
+        double retencion;
+        retencion = sueldoBruto * (5.0 / 100.0);
+        return retencion;
     }
 
     public String imprimirDatos() {
