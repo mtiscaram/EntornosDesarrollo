@@ -3,10 +3,7 @@ package examenedtarea;
 
 import java.util.Scanner;
 
-/**
- *
- * @author mtisc
- */
+
 public class Trabajador {
     Scanner sc = new Scanner(System.in);
     private String nombre;

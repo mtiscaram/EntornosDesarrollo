@@ -5,7 +5,7 @@ package examenedtarea;
  *
  * @author mtisc
  */
-public class ExamenEdTarea {
+public class Empresa {
 
     /**
      * @param args the command line arguments
