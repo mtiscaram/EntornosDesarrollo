@@ -245,7 +245,7 @@ public class EmpleadoIT {
         double result = instance.calculoSueldoBruto();
         assertEquals(expResult, result, 0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -260,7 +260,7 @@ public class EmpleadoIT {
         double result = Empleado.calculoSueldoNeto(sueldoBruto, retencion);
         assertEquals(expResult, result, 0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
 
     /**
@@ -274,7 +274,7 @@ public class EmpleadoIT {
         double result = Empleado.calculoRetencion(sueldoBruto);
         assertEquals(expResult, result, 0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**

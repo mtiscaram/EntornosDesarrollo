@@ -9,7 +9,33 @@ import java.util.Scanner;
  */
 public class Empresa {
 
-   
+    /**
+     * Variables de tipo double
+     * <ul>
+     * <li>retencion</li>
+     * <li>sueldoNeto</li>
+     * </ul>
+     * Se calculan llamando a sus respectivos métodos de las clases Trabajador
+     */
+    /**
+     * Variable de tipo int 
+     * valor para elegir opcion del menú
+     * 
+     */
+    /**
+     * Se crea Objeto trabajador1 de la clase TrabajadorPorComision
+     * 
+     */
+    /**
+     * Se crea Objeto trabajador2 de la clase TrabajadorPorHoras
+     * 
+     */
+    
+
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -19,7 +45,37 @@ public class Empresa {
         TrabajadorPorComision trabajador1 = new TrabajadorPorComision();
         TrabajadorPorHoras trabajador2 = new TrabajadorPorHoras();
 
-     
+     /**
+      * Bucle do-while para elegir opción del menú:
+      * <ul>
+      * <li>trabajador por horas</li>
+      * <li>trabajador por comision</li>
+      * <li>salir del programa</li>
+      * </ul>
+      * 
+      */  
+     /**
+      * Objeto trabajador1 de tipo TrabajadorPorComision llama a métodos:
+      * <ul>
+      * <li>datosTrabajador</li>
+      * <li>calculoSueldoBruto</li>
+      * <li>calculoRetencion</li>
+      * <li>calculoSueldoNeto</li>
+      * <li>toString</li>
+      * </ul>
+      * 
+      */
+     /**
+      * Objeto trabajador2 de tipo TrabajadorPorHoras llama a métodos:
+      * <ul>
+      * <li>datosTrabajador</li>
+      * <li>calculoSueldoBruto</li>
+      * <li>calculoRetencion</li>
+      * <li>calculoSueldoNeto</li>
+      * <li>toString</li>
+      * </ul>
+      * 
+      */
 
         do {
             System.out.println("\n Elige a un tipo de trabajador:");
