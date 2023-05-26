@@ -8,36 +8,25 @@ import java.util.Scanner;
 public class TrabajadorPorComision extends Empleado {
     Scanner sc = new Scanner(System.in);
 
-    /**
-     * Variable comision
-     */
+    
     private double comision;
 
-    /**
-     * Constructor TrabajadorPorComision que hereda variables de Empleado
-     */
+    
     public TrabajadorPorComision() {
         super();
     }
     
-    /**
-     * @return comision
-     */
+   
     public double getComision() {
         return comision;
     }
     
-    /**
-     * @param comision  comision to set
-     */
+
     public void setComision(double comision) {
         this.comision = comision;
     }
     
-    /**
-     * Método datosTrabajador Metodo que pide por teclado introducir los datos
-     * de trabajador
-     */
+    
     @Override
     public void datosTrabajador() {
         System.out.println("Introduce nombre del trabajador:");
@@ -58,12 +47,7 @@ public class TrabajadorPorComision extends Empleado {
         comision = sc.nextDouble();
     }
 
-    /**
-     * Método calculoSueldoBruto Calcula el sueldoBruto multiplicando
-     * horasTrabajadas con precioHora y luego se le suma comision
-     *
-     * @return sueldoBruto
-     */
+    
     @Override
     public double calculoSueldoBruto() {
         double sueldoBruto;
